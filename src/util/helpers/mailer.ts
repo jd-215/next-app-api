@@ -19,6 +19,7 @@ export const sendMail = async (email: string, emailType:string, userID: string )
              forgotPasswordToken: hasedToken,
              forgotPasswordExpiry: Date.now() + 3600000
            })
+           
            console.log("updated user", updatedUser)
        }
 
