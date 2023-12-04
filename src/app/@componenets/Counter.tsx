@@ -13,5 +13,5 @@ export default function CounterNumber() {
     }
   }, [])
    
-  return <h1>Count Value {state}</h1>
+return ( <div>Count Value {state}</div> )
 }

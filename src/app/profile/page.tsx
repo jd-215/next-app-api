@@ -1,6 +1,6 @@
 'use client'
 import axios from "axios";
-import { LogoutButton } from "../@componenets/LogoutButton";
+import { LogoutButton } from "../@componenets/assets/LogoutButton";
 import { useEffect, useState } from "react";
 
 const getUserData = async (): Promise<{}> => {
