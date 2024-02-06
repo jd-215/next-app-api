@@ -10,12 +10,12 @@ connectToDB();
 export async function POST(request: NextRequest) {
 	try {
 		const data = await request.json();
-		console.log(data);
+		// console.log(data);
         const { email } = data;
 		// check if username exist
 
 		const user = await UserModel.findOne({email : email});
-        console.log("existing user details if available - ", user);
+        // console.log("existing user details if available - ", user);
 		if (!user) {
 			return new NextResponse(JSON.stringify({ message: "user not found" }), {
 				status: 400,

@@ -15,16 +15,16 @@ const Page: React.FC = () => {
 	const [loading, setLoading] = useState(false);
 	const router = useRouter();
 	const onSignUp = async () => {
-		console.log("data sent to the server", state);
+		// console.log("data sent to the server", state);
 		try {
 			setLoading(true);
 			const response = await axios.post("http://localhost:3000/api/users/recovery", state)
-			console.log("data received from the server", response.data);
+			// console.log("data received from the server", response.data);
 			// setLoading(false);
 			// router.push("/profile");
 		}
 		catch (err: any ) {
-			console.log("loading failed", err.message);
+			// console.log("loading failed", err.message);
 		}finally{
 			setLoading(false);
 		}

@@ -19,7 +19,7 @@ export async function GET(
 	Content: { params: { userid: string } }
 ): Promise<NextResponse<unknown | T>> {
 	const { userid } = Content.params;
-	console.log(userid);
+	// console.log(userid);
 
 	const dataObj = () => {
 		if (Object.keys(user).includes(userid)) {
@@ -49,7 +49,7 @@ export async function PUT(
 ): Promise<NextResponse<unknown | T>> {
 	let payload = await request.json();
 	let message: string = "error in data incomming";
-	console.log(typeof payload.id);
+	// console.log(typeof payload.id);
 	if (
 		typeof payload.id === "number" &&
 		Object.keys(user).includes(String(payload.id))
@@ -73,7 +73,7 @@ export async function DELETE(
 	content: any
 ): Promise<NextResponse<unknown | T>> {
 	let payloadId = content.params.userid;
-	console.log(payloadId);
+	// console.log(payloadId);
 	return new NextResponse<unknown | T>(
 		JSON.stringify({
 			result: "user delete success ",

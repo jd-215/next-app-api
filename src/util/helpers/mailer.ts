@@ -6,13 +6,13 @@ import bcryptjs from "bcryptjs";
 export const sendMail = async (email: string, emailType:string, userID: string ) => {
     try {
        const hasedToken = await bcryptjs.hash(userID.toString(), 10)
-        console.log(email, emailType, userID);
+        // console.log(email, emailType, userID);
        if (emailType === "VERIFY") {
             const updatedUser =   await UserModel.findByIdAndUpdate(userID, {
              verifyToken: hasedToken,
              verifyExpiry: Date.now() + 3600000
            })
-           console.log("updated user", updatedUser)
+        //    console.log("updated user", updatedUser)
 
        } else if (emailType === "RESET") {
         const updatedUser =   await UserModel.findByIdAndUpdate(userID, {
@@ -20,7 +20,7 @@ export const sendMail = async (email: string, emailType:string, userID: string )
              forgotPasswordExpiry: Date.now() + 3600000
            })
            
-           console.log("updated user", updatedUser)
+        //    console.log("updated user", updatedUser)
        }
 
        const transporter =  nodemailer.createTransport({
@@ -51,7 +51,7 @@ export const sendMail = async (email: string, emailType:string, userID: string )
 
 
        const responseInfo = await transporter.sendMail(emailType === "VERIFY" ? mailOptionsverify : mailOptionsforgotPassword)
-       console.log("Message sent: %s", responseInfo.messageId)
+    //    console.log("Message sent: %s", responseInfo.messageId)
 
        return responseInfo
 

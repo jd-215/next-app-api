@@ -10,8 +10,8 @@ connectToDB();
 export async function POST(request: NextRequest) {
     const { password, token } = await request.json();
 
-    console.log("token extracted to reset password -", token);
-    console.log("incoming password data -", password);
+    // console.log("token extracted to reset password -", token);
+    // console.log("incoming password data -", password);
 
     // check token validity
     const user = await UserModel.findOne({
@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
 		forgotPasswordExpiry: { $gt: Date.now() },
 	});
 
-    console.log("user details -", user);
+    // console.log("user details -", user);
     if (!user || user.forgotPasswordToken === null) {
         return new NextResponse(
             JSON.stringify({ message: "reset password link expired" }),

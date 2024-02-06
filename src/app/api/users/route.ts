@@ -23,17 +23,17 @@ export async function GET(
 	await mongoose
 		.connect(CONNECT_DB_URL)
 		.then((res: any) => {
-			console.log("MongoDB Connected");
+			// console.log("MongoDB Connected");
 		})
 		.catch((err) => {
-			console.log(err);
+			// console.log(err);
 		});
 
 	// const data = await mongoose.modelNames();
 	// console.log(data)
 
 	const data = await Person.find({});
-	console.log(data);
+	// console.log(data);
 
 	// await Person.create({
 	//     id: 0,

@@ -26,7 +26,7 @@ connectToDB();
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
    const reqPageIndex: {}  | unknown= req.body;
-   console.log(reqPageIndex);
+//    console.log(reqPageIndex);
    try{ 
             const UserID = await getDataFromToken(req);
             const user = await BlogModel.find({userID: UserID}).sort({date: -1}).limit(5);

@@ -18,19 +18,19 @@ export default function VerifyEmailPage() {
 				`http://localhost:3000/api/users/recovery/verify`,
 				{ token: token }
 			);
-			console.log("",response.data);
+			// console.log("",response.data);
 
 			if (response.data.prop === "reset") {
 				setVerify(true);
 			}
 		} catch (err: any) {
 			setError(true);
-			console.log(err.response.data);
+			// console.log(err.response.data);
 		}
 	};
 	useEffect(() => {
 		const urlToken = window.location.search.split("=")[1];
-		console.log(urlToken);
+		// console.log(urlToken);
 		setToken(urlToken || "");
 		if (token.length > 0 && verify === false) {
 			verifyUserEmail();
@@ -46,15 +46,15 @@ export default function VerifyEmailPage() {
 				`http://localhost:3000/api/users/recovery/resetpassword`,
 				{token: token, password: pasword }
 			);
-			console.log(response.data);
+			// console.log(response.data);
 			
 			router.push("/login");
 		} catch (err: any) {
 			setError(true);
-			console.log(err.response.data);
+			// console.log(err.response.data);
 		}
 
-		console.log("password to update -", pasword);
+		// console.log("password to update -", pasword);
 	};
 
 	return (

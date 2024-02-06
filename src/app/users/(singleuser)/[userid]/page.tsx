@@ -2,7 +2,7 @@ import PageModal from "../../@modal/(..)user_info/[userid]/page"
 
 
 function PageText({ params }: { params: { userid: string } }): React.ReactNode {
-    console.log(params)
+    // console.log(params)
 
   return (
     <div>

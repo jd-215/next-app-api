@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     try {
         const data = await request.json();
         const token = data.token;
-        console.log("incoming token data -", token);
+        // console.log("incoming token data -", token);
 
         const user = await UserModel.findOne({ verifyToken: token });
 
@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
             });
         }
 
-        console.log("existing user details if available - ",user);
+        // console.log("existing user details if available - ",user);
 
         user.isVarified = true;
         user.verifyToken = undefined;

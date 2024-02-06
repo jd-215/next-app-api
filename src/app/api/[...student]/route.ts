@@ -23,7 +23,7 @@ export async function GET(
 	await mongoose
 		.connect(CONNECT_DB_URL)
 		.then((res: any) => {
-			console.log("MongoDB Connected");
+			// console.log("MongoDB Connected");
 		})
 		.catch((err) => {
 			console.log(err);

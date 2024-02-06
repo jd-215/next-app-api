@@ -14,7 +14,7 @@ const Page: React.FC = () => {
 	});
 	const router = useRouter();
 	const onSignUp = async () => {
-		console.log("data sent to the server", state);
+		// console.log("data sent to the server", state);
 		// router.push("/login");
 		try {
 			setLoading(true);
@@ -22,12 +22,12 @@ const Page: React.FC = () => {
 				"http://localhost:3000/api/users/signup",
 				state
 			);
-			console.log("data received from the server", response.data);
+			// console.log("data received from the server", response.data);
 			setLoading(false);
 			router.push("/login");
 		} catch (err) {
-			console.log(err);
-			setLoading(false);
+			// console.log(err);
+			// setLoading(false);
 		}
 	};
 

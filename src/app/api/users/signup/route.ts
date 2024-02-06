@@ -12,12 +12,12 @@ export async function POST(request: NextRequest ): Promise<NextResponse<unknown>
 
   try {
     const data = await request.json();
-    console.log(data);
+    // console.log(data);
     const {username, password, email} = data;
     // check if username exist
     const user = await UserModel.findOne({email});
 
-    console.log("existing user details if available - ",user);
+    // console.log("existing user details if available - ",user);
     if (user) {
         return new NextResponse(JSON.stringify({ message: "user already exist" }), {
           status: 400,
@@ -35,7 +35,7 @@ export async function POST(request: NextRequest ): Promise<NextResponse<unknown>
         email,
       })
       const savedUser = await newUser.save();
-      console.log(savedUser);
+      // console.log(savedUser);
 
       // send verification email
       await sendMail(savedUser.email,"VERIFY", savedUser._id);

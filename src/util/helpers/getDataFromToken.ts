@@ -7,7 +7,7 @@ export const getDataFromToken = (request: NextRequest) => {
         const token = request.cookies.get("token")?.value || "";
         const { JWT_SECRET_KEY } = process.env;
         const tokenDataDecoded : any = jwt.verify(token, JWT_SECRET_KEY!);
-        console.log(tokenDataDecoded);
+        // console.log(tokenDataDecoded);
         return tokenDataDecoded.id
     }
     catch (error: any) {

@@ -7,13 +7,13 @@ export async function connectToDB() {
         const connection = mongoose.connection;
 
         connection.on("open", () => {
-            console.log("MongoDB Connected");
+            // console.log("MongoDB Connected");
         })
         connection.on("error", () => {
-            console.log("MongoDB Connection Error");
+            // console.log("MongoDB Connection Error");
             process.exit();
         })
     }catch (error) {
-        console.log(error);
+        // console.log(error);
     }
 }

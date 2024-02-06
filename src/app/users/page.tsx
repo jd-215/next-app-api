@@ -11,7 +11,7 @@ type T = jasonValueObjects | jasonValueArrays;
 async function getUsers(): Promise<T | unknown> {
   let data = await fetch("http:localhost:3000/api/users");
   data = await data.json();
-  console.log(data);
+  // console.log(data);
   return data;
 }
 

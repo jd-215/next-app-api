@@ -11,7 +11,7 @@ connectToDB();
 export async function POST(request: NextRequest): Promise<NextResponse> {
 	const data = await request.json();
 	const tokenPassword = data.token;
-	console.log("varified password token -",  tokenPassword);
+	// console.log("varified password token -",  tokenPassword);
 
 	const user = await UserModel.findOne({
 		forgotPasswordToken: tokenPassword,
